@@ -1,6 +1,7 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
-baseURL = "mulbyte.com/"
+# For custom domain mulbyte.com
+baseURL = "https://mulbyte.com/"
 # Title of your website (required).
 title = "Mulbyte"
 # Your theme name
