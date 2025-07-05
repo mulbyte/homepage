@@ -36,7 +36,7 @@ const toggleComment = ({ filepath, regex }) => {
 };
 
 const getFolderName = (rootFolder) => {
-  const configPath = path.join(rootFolder, "exampleSite/hugo.toml");
+  const configPath = path.join(rootFolder, "homepage/hugo.toml");
   const getConfig = fs.readFileSync(configPath, "utf8");
   const match = getConfig.match(/theme\s*=\s*\[?"([^"\]]+)"\]?/);
   let selectedTheme = null;
@@ -82,13 +82,13 @@ const setupProject = () => {
     // remove this part if you don't using theme demo as a module
     [
       {
-        filepath: path.join(rootFolder, "exampleSite/hugo.toml"),
+        filepath: path.join(rootFolder, "homepage/hugo.toml"),
         regex: /^.*theme\s*=\s*("[^"\]]+"|\S+)/m,
       },
       {
         filepath: path.join(
           rootFolder,
-          "exampleSite/config/_default/module.toml",
+          "homepage/config/_default/module.toml",
         ),
         regex: /\[\[imports\]\]\s*\r?\npath = "([^"]+)"/,
       },
@@ -114,9 +114,9 @@ const setupProject = () => {
       }
     });
 
-    const exampleSite = path.join(rootFolder, "exampleSite");
-    iterateFilesAndFolders(exampleSite, { destinationRoot: rootFolder });
-    deleteFolder(exampleSite);
+    const homepage = path.join(rootFolder, "homepage");
+    iterateFilesAndFolders(homepage, { destinationRoot: rootFolder });
+    deleteFolder(homepage);
   } else {
     console.log("Project already setup");
   }

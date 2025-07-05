@@ -4,14 +4,14 @@ const path = require("path");
 const rootDirs = ["assets/css", "layouts"];
 const configFiles = [
   {
-    filePath: "exampleSite/data/theme.json",
+    filePath: "homepage/data/theme.json",
     patterns: ["colors.darkmode"],
   },
 ];
 
 // asset paths
 const deleteAssetList = [
-  "exampleSite/assets/images/logo-darkmode.png",
+  "homepage/assets/images/logo-darkmode.png",
   "layouts/partials/components/theme-switcher.html",
 ];
 

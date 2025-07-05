@@ -44,7 +44,7 @@ const deleteFolder = (folderPath) => {
 };
 
 const getFolderName = (rootFolder) => {
-  const configPath = path.join(rootFolder, "exampleSite/hugo.toml");
+  const configPath = path.join(rootFolder, "homepage/hugo.toml");
   const getConfig = fs.readFileSync(configPath, "utf8");
   const match = getConfig.match(/theme\s*=\s*\[?"([^"\]]+)"\]?/);
   let selectedTheme = null;
@@ -75,7 +75,7 @@ const iterateFilesAndFolders = (rootFolder, { destinationRoot }) => {
 const setupTheme = () => {
   const rootFolder = path.join(__dirname, "../");
 
-  if (!fs.existsSync(path.join(rootFolder, "exampleSite"))) {
+  if (!fs.existsSync(path.join(rootFolder, "homepage"))) {
     // remove this part if you don't using theme demo as a module
     [
       {
@@ -100,12 +100,12 @@ const setupTheme = () => {
       "tailwind-plugin",
     ];
 
-    const folder = createNewFolder(rootFolder, "exampleSite");
+    const folder = createNewFolder(rootFolder, "homepage");
 
     fs.readdirSync(rootFolder, { withFileTypes: true }).forEach((file) => {
       if (includesFiles.includes(file.name)) {
         if (file.isDirectory()) {
-          const destination = path.join(rootFolder, "exampleSite", file.name);
+          const destination = path.join(rootFolder, "homepage", file.name);
           fs.mkdirSync(destination, { recursive: true });
           iterateFilesAndFolders(path.join(rootFolder, file.name), {
             destinationRoot: destination,
