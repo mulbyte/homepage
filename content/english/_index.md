@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "Expert Software Solutions for Modern Infrastructure"
+  title: "Building Reliable Software Infrastructure for the Modern Web"
   content: "We specialize in infrastructure automation, systems programming, cloud computing, and web development. Building robust, scalable solutions that power your business."
   image: "/images/banner.png"
   button:
